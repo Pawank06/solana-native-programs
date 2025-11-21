@@ -1,12 +1,11 @@
 [package]
 name = "counter"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
 [lib]
-create-type = ["cdylib", "lib"]
+crate-type = ["cdylib", "lib"]
 
 [dependencies]
-borsh = "1.5.7"
-borsh-derive = "1.5.7"
-solana-program = "3.0.0"
+borsh = "1.5.1"
+solana-program = "1.18.26"

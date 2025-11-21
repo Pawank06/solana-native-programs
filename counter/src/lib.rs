@@ -1,5 +1,11 @@
 use borsh::{BorshDeserialize, BorshSerialize};
-use solana_program::{account_info::{AccountInfo, next_account_info}, entrypoint, entrypoint::{self, ProgramResult}, msg, pubkey::{self, Pubkey}};
+use solana_program::{
+    account_info::{AccountInfo, next_account_info}, 
+    entrypoint, 
+    entrypoint::ProgramResult, 
+    msg, 
+    pubkey::Pubkey
+};
 
 #[derive(BorshSerialize, BorshDeserialize)]
 enum InstructionType {
@@ -34,7 +40,7 @@ fn counter_program(
         }
     }
 
-    counter_data.count.serialize(&mut *acc.data.borrow_mut());
-    msg!("Contract Succeded");
+    counter_data.count.serialize(&mut *acc.data.borrow_mut())?;
+    msg!("Contract Succeeded");
     Ok(())
 }
