@@ -1,0 +1,18 @@
+# Solana test validator data
+test-ledger/
+
+# Rust build artifacts
+target/
+**/*.rs.bk
+*.pdb
+
+# Node modules
+node_modules/
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db

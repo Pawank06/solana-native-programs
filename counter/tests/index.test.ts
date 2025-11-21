@@ -121,7 +121,7 @@ test("Make sure decrease works", async () => {
     await connection.confirmTransaction(signature);
     
     // Verify the counter decreased (5 - 2 = 3)
-    const dataAccountInfo = await connection.getAccountInfo(dataAccount.publicKey);
+    const dataAccountInfo = await connection.getAccountInfo(dataAccount.publicKey);l
     const counter = borsh.deserialize(schema, dataAccountInfo?.data);
     console.log("Counter count after decrement:", counter.count);
     expect(counter?.count).toBe(3);
