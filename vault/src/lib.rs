@@ -1,14 +1,12 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
+pub mod error;
+pub mod state;
+pub mod instruction;
+pub mod processor;
+pub mod utils;
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+#[cfg(not(feature = "no-entrypoint"))]
+pub mod entrypoint;
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
+pub use error::EscrowError;
+pub use state::{EscrowState, EscrowStatus, EscrowType};
+pub use instruction::EscrowInstruction;
